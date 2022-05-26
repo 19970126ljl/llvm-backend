@@ -577,6 +577,7 @@ static const EnumEntry<unsigned> ElfMachineType[] = {
   LLVM_READOBJ_ENUM_ENT(ELF, EM_RH32         ),
   LLVM_READOBJ_ENUM_ENT(ELF, EM_RCE          ),
   LLVM_READOBJ_ENUM_ENT(ELF, EM_ARM          ),
+  LLVM_READOBJ_ENUM_ENT(ELF, EM_LEG          ),
   LLVM_READOBJ_ENUM_ENT(ELF, EM_ALPHA        ),
   LLVM_READOBJ_ENUM_ENT(ELF, EM_SH           ),
   LLVM_READOBJ_ENUM_ENT(ELF, EM_SPARCV9      ),

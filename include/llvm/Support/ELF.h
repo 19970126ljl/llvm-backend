@@ -435,6 +435,11 @@ enum {
 #include "ELFRelocs/ARM.def"
 };
 
+// ELF Relocation types for LEG
+enum {
+#include "ELFRelocs/LEG.def"
+};
+
 // AVR specific e_flags
 enum : unsigned {
   EF_AVR_ARCH_AVR1    = 1,

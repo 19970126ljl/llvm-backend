@@ -842,6 +842,8 @@ StringRef ELFObjectFile<ELFT>::getFileFormatName() const {
     case ELF::EM_SPARC:
     case ELF::EM_SPARC32PLUS:
       return "ELF32-sparc";
+    case ELF::EM_LEG:
+      return "ELF32-leg";
     case ELF::EM_WEBASSEMBLY:
       return "ELF32-wasm";
     default:
@@ -887,6 +889,8 @@ unsigned ELFObjectFile<ELFT>::getArch() const {
     return Triple::aarch64;
   case ELF::EM_ARM:
     return Triple::arm;
+  case ELF::EM_LEG:
+    return Triple::leg;
   case ELF::EM_AVR:
     return Triple::avr;
   case ELF::EM_HEXAGON:

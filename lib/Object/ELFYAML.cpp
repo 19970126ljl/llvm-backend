@@ -62,6 +62,7 @@ ScalarEnumerationTraits<ELFYAML::ELF_EM>::enumeration(IO &IO,
   ECase(EM_RH32)
   ECase(EM_RCE)
   ECase(EM_ARM)
+  ECase(EM_LEG)
   ECase(EM_ALPHA)
   ECase(EM_SH)
   ECase(EM_SPARCV9)
@@ -506,6 +507,9 @@ void ScalarEnumerationTraits<ELFYAML::ELF_REL>::enumeration(
     break;
   case ELF::EM_ARM:
 #include "llvm/Support/ELFRelocs/ARM.def"
+    break;
+  case ELF::EM_LEG:
+#include "llvm/Support/ELFRelocs/LEG.def"
     break;
   default:
     llvm_unreachable("Unsupported architecture");
