@@ -55,7 +55,7 @@ unsigned LEGELFObjectWriter::GetRelocType(const MCValue &Target,
 }
 
 LEGELFObjectWriter::LEGELFObjectWriter(uint8_t OSABI)
-    : MCELFObjectTargetWriter(/*Is64Bit*/ false, OSABI, /*ELF::EM_LEG*/ ELF::EM_ARM,
+    : MCELFObjectTargetWriter(/*Is64Bit*/ false, OSABI, /*ELF::EM_LEG*/ ELF::EM_LEG,
                               /*HasRelocationAddend*/ false) {}
 
 LEGELFObjectWriter::~LEGELFObjectWriter() {}

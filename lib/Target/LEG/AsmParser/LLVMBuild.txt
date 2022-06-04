@@ -15,20 +15,9 @@
 ;
 ;===------------------------------------------------------------------------===;
 
-[common]
-subdirectories = InstPrinter MCTargetDesc TargetInfo AsmParser Disassembler
-
 [component_0]
-type = TargetGroup
-name = LEG
-parent = Target
-has_asmprinter = 1
-has_disassembler = 1
-has_asmparser = 1
-
-[component_1]
 type = Library
-name = LEGCodeGen
+name = LEGAsmParser
 parent = LEG
-required_libraries = Analysis AsmPrinter CodeGen Core MC SelectionDAG Support Target TransformUtils LEGAsmPrinter LEGDesc LEGInfo
+required_libraries = MC MCParser LEGDesc LEGInfo Support
 add_to_library_groups = LEG

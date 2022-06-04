@@ -40,6 +40,9 @@ def : Proc<"generic", []>;
 // Declare the target which we are implementing
 //===----------------------------------------------------------------------===//
 
+def LEGAsmParser : AsmParser {}
+
 def LEG : Target {
   let InstructionSet = LEGInstrInfo;
+  let AssemblyParsers = [LEGAsmParser];
 }

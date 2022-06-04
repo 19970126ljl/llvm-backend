@@ -160,7 +160,7 @@ def MOVLOi16 : MOV<0b1000, "movw", (ins i32imm:$imm),
 def MOVHIi16 : MOV<0b1010, "movt", (ins GRRegs:$src1, i32imm:$imm),
                   [/* No Pattern */]>;
 
-def MOVi32 : InstLEG<(outs GRRegs:$dst), (ins i32imm:$src), "",
+def MOVi32 : InstLEG<(outs GRRegs:$dst), (ins i32imm:$src), "movi32",
                      [(set i32:$dst, (movei32 imm:$src))]> {
   let isPseudo = 1;
 }
@@ -265,6 +265,10 @@ let isTerminator = 1, isBranch = 1, isBarrier = 1 in {
 let isTerminator = 1, isBranch = 1, Uses = [CPSR] in {
   def Bcc : InstLEG<(outs), (ins cc_val:$cc, b_target:$dst),
                     "b$cc $dst",  []> {
+    bits<24> dst;
+    let Inst{31-28} = 0b0011;
+    let Inst{27-24} = 0b1010;
+    let Inst{23-0} = dst;
   }
 }
 

@@ -14,6 +14,7 @@ class InstLEG<dag outs, dag ins, string asmstr, list<dag> pattern>
     : Instruction {
   field bits<32> Inst;
 
+  field bits<32> SoftFail = 0;
   let Namespace = "LEG";
   dag OutOperandList = outs;
   dag InOperandList = ins;
